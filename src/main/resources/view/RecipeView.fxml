@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FAF6E9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RecipeController">
+
+   <!-- ====================== TOP SECTION (Menu + Navigation Bar) ====================== -->
+   <top>
+      <AnchorPane prefHeight="89.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+
+         <!-- Navigation Bar -->
+         <HBox id="navBar" prefHeight="77.0" prefWidth="1200.0" style="-fx-background-color: #aabfac;" AnchorPane.bottomAnchor="33.33333333333333" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView id="logo" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@/images/nutriTrack_logo.png" />
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button id="navButton" mnemonicParsing="false" onAction="#goToHome" prefHeight="63.0" prefWidth="110.0" text="Home 🏠">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="navButton" mnemonicParsing="false" onAction="#goToMealPlan" prefHeight="63.0" prefWidth="200.0" text="Meal Plan 🍴">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="navButton" mnemonicParsing="false" onAction="#goToRecipe" prefHeight="63.0" prefWidth="112.0" text="Recipe 🍲">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="navButton" mnemonicParsing="false" onAction="#goToHealthDashboard" prefHeight="63.0" prefWidth="200.0" text="Health Dashboard 📶">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefHeight="63.0" prefWidth="122.0" text="Logout ⏻">
+               <HBox.margin>
+                  <Insets left="90.0" />
+               </HBox.margin>
+            </Button>
+         </HBox>
+      </AnchorPane>
+   </top>
+
+   <!-- ====================== LEFT SECTION (Category Box) ====================== -->
+   <left>
+      <VBox id="categoryBox" alignment="TOP_CENTER" prefHeight="373.0" prefWidth="116.0" style="-fx-background-color: #fad9a7; -fx-border-color: black;" BorderPane.alignment="CENTER">
+         <Text id="categoryTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+         <Button id="mainDishBtn" fx:id="btnMainDish" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Main Dish">
+            <padding>
+               <Insets bottom="20.0" top="20.0" />
+            </padding>
+         </Button>
+         <Button id="beverageBtn" fx:id="btnBeverage" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Beverage">
+            <padding>
+               <Insets bottom="20.0" top="20.0" />
+            </padding>
+         </Button>
+         <Button id="sideDishBtn" fx:id="btnSideDish" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Side Dish">
+            <padding>
+               <Insets bottom="20.0" top="20.0" />
+            </padding>
+         </Button>
+         <Button id="dessertBtn" fx:id="btnDesserts" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Desserts">
+            <padding>
+               <Insets bottom="20.0" top="20.0" />
+            </padding>
+         </Button>
+         <Button id="soupsBtn" fx:id="btnSoupsStews" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Soups &amp; Stews">
+            <padding>
+               <Insets bottom="20.0" top="20.0" />
+            </padding>
+         </Button>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+
+   <!-- ====================== CENTER SECTION (Recipe Search & List) ====================== -->
+   <center>
+      <VBox prefHeight="1110.0" prefWidth="564.0" BorderPane.alignment="CENTER">
+
+         <!-- Title -->
+         <HBox prefHeight="43.0" prefWidth="684.0">
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Text id="recipeTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="EXPLORE OUR RECIPES" />
+         </HBox>
+
+         <!-- Filter -->
+         <VBox prefHeight="101.0" prefWidth="460.0">
+            <Label id="caloriesRange" text="Calories Range:">
+               <padding>
+                  <Insets bottom="10.0" top="15.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="27.0" prefWidth="333.0">
+               <TextField id="minInput" fx:id="txtMinCalories" prefHeight="26.0" prefWidth="80.0">
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor></TextField>
+               <Text id="symbol" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+                  <HBox.margin>
+                     <Insets left="10.0" right="10.0" />
+                  </HBox.margin>
+               </Text>
+               <TextField id="maxInput" fx:id="txtMaxCalories" prefHeight="25.0" prefWidth="80.0">
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor>
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin></TextField>
+               <Button id="filterBtn" fx:id="btnFilter" mnemonicParsing="false" prefHeight="23.0" prefWidth="91.0" text="Filter 🔍" />
+            </HBox>
+            <padding>
+               <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+         </VBox>
+
+         <!-- Recipe Scroll Pane -->
+         <ScrollPane id="recipeScrollPane" fx:id="recipeScrollPane" hbarPolicy="NEVER" prefHeight="500.0" prefWidth="699.0">
+            <VBox fx:id="recipeListContainer" prefHeight="499.0" prefWidth="633.0" />
+         </ScrollPane>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+
+   <!-- ====================== RIGHT SECTION (Nutrition Info) ====================== -->
+   <right>
+      <VBox id="nutritionInfo" prefHeight="663.0" prefWidth="395.0" spacing="30.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <Text id="nutritionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nutrition Info" textAlignment="CENTER" wrappingWidth="240.0">
+            <VBox.margin>
+               <Insets left="80.0" top="15.0" />
+            </VBox.margin></Text>
+
+         <!-- Prep Time -->
+         <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="284.0">
+            <Label id="prepTime" text="Prep Time:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label id="prepLabel" fx:id="lblPrepTime" text="--" />
+            <padding>
+               <Insets left="10.0" right="10.0" />
+            </padding>
+         </HBox>
+
+         <!-- Cook Time -->
+         <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="284.0">
+            <Label id="cookTime" text="Cook Time:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label id="cookLabel" fx:id="lblCookTime" text="--" />
+            <padding>
+               <Insets left="10.0" right="10.0" />
+            </padding>
+         </HBox>
+
+         <!-- Nutrition -->
+         <VBox prefHeight="77.0" prefWidth="284.0">
+            <Label id="nutrition" text="Nutrition:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <Label id="nutritionList" fx:id="lblNutrition" text="--" wrapText="true" />
+            <padding>
+               <Insets left="10.0" right="10.0" />
+            </padding>
+         </VBox>
+
+         <!-- Ingredients -->
+         <VBox prefHeight="113.0" prefWidth="284.0">
+            <Label id="ingredients" text="Ingredients:">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <Label id="lblIngredients" fx:id="lblIngredients" text="--" wrapText="true" />
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </ScrollPane>
+            <padding>
+               <Insets left="10.0" right="10.0" />
+            </padding>
+         </VBox>
+
+         <!-- Steps -->
+         <VBox prefHeight="164.0" prefWidth="284.0">
+            <Label id="steps" text="Steps:">
+               <font>
+                  <Font name="Segoe Print Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Label>
+            <ScrollPane fitToWidth="true" prefHeight="117.0" prefWidth="264.0" style="-fx-background-color: #ffffff;">
+               <Label id="lblSteps" fx:id="lblSteps" text="--" wrapText="true">
+                  <font>
+                     <Font name="Segoe Print" size="12.0" />
+                  </font>
+               </Label>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </ScrollPane>
+            <padding>
+               <Insets left="10.0" right="10.0" />
+            </padding>
+         </VBox>
+
+         <!-- Add to Meal Plan -->
+         <Button id="addPlanBtn" fx:id="btnAddToMealPlan" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="✚ Add To Meal Plan" textAlignment="CENTER">
+            <VBox.margin>
+               <Insets bottom="15.0" left="110.0" />
+            </VBox.margin>
+         </Button>
+      </VBox>
+   </right>
+   <stylesheets>
+      <URL value="@css/home.css" />
+      <URL value="@css/recipe.css" />
+   </stylesheets>
+</BorderPane>

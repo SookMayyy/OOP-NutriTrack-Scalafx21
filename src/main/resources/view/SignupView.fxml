@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@css/login_signup.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignupController">    <ImageView id="backgroundImage" fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Image url="@../images/login_background.jpg" />
+      </ImageView>
+   <VBox id="signupBox" opacity="0.9" prefHeight="598.0" prefWidth="540.0" spacing="25.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="90.0">
+      <padding>
+         <Insets bottom="50.0" left="80.0" right="80.0" />
+      </padding>
+         <Pane prefHeight="61.0" prefWidth="380.0">
+             <Text id="signupTitle" layoutX="130.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Signup" />
+             <Button id="backButton" graphicTextGap="1.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="61.0" prefWidth="71.0" text="⬅" textAlignment="CENTER">
+                <cursor>
+                   <Cursor fx:constant="HAND" />
+                </cursor>
+             </Button>
+         </Pane>
+               <Text id="nameLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="380.0" />
+               <TextField id="nameField" fx:id="nameField" prefHeight="39.0" prefWidth="316.0" promptText="Enter your name">
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor>
+               </TextField>
+               <Text id="emailLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="380.0" />
+               <TextField id="emailField" fx:id="emailField" prefHeight="39.0" prefWidth="316.0" promptText="Enter your email">
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor>
+               </TextField>
+               <Text id="passwordLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="380.0" />
+               <PasswordField id="passwordField" fx:id="passwordField" prefHeight="39.0" prefWidth="316.0" promptText="Enter your password">
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor>
+               </PasswordField>
+               <Button id="signupButton" onAction="#handleSignup" prefHeight="39.0" prefWidth="104.0" text="_Sign up" textAlignment="CENTER">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+               </Button>
+   </VBox>
+</AnchorPane>

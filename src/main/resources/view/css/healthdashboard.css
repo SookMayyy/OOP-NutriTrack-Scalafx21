@@ -1,0 +1,189 @@
+/* =============================
+   ROOT DASHBOARD LAYOUT
+   ============================= */
+#healthdashboardPane {
+    -fx-background-color: linear-gradient(to bottom, #f9f9f9, #e9f2ef);
+    -fx-background-image: url("../../images/beige_background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+/* =============================
+   DASHBOARD SECTIONS
+   ============================= */
+#dashboardBorderPane {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+}
+
+/* Profile Section */
+#dashboardTitle, #summaryTitle, #mealHistoryTitle {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+}
+
+#profileVBox {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+}
+
+#profile {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.3, 2, 4);
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}
+
+#usernameText, #emailText {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+#usernameLbl, #emailLbl {
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 14px;
+}
+
+/* =============================
+   SUMMARY SECTION
+   ============================= */
+#summarySection {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.3, 0, 3);
+}
+
+#summaryTitle {
+    -fx-text-fill: #2c3e50;
+}
+
+#summaryLeft {
+    -fx-background-color: #f4fbf8;
+    -fx-border-color: #bcd9ce;
+    -fx-border-width: 1;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+#macroLabel {
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+#summaryRight {
+    -fx-background-color: #fdfdfd;
+    -fx-border-color: #d6e3dd;
+    -fx-border-width: 1;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+#todayText {
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #4a707a;
+}
+
+/* Macronutrient & Calories Labels */
+#proteinText {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e47575;
+}
+
+#fatText {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c88e6e;
+}
+
+#carbsText {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4baa4b;
+}
+
+#proteinLbl {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-text-fill: #e47575;
+}
+
+#fatLbl {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-text-fill: #6e8cc8;
+}
+
+#carbsLbl {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-text-fill: #4baa4b;
+}
+
+#nutritionTotalText, #totalCaloriesText {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-text-fill: #0092d6;
+    -fx-font-weight: bold;
+}
+
+#totalCaloriesLbl{
+    -fx-font-size: 14px;
+    -fx-text-fill: #444;
+    -fx-font-weight: bold;
+}
+
+/* Pie Chart */
+#piechart {
+    -fx-border-color: #cde6de;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #ffffff;
+}
+
+/* =============================
+   MEAL HISTORY SECTION
+   ============================= */
+#mealHistorySection {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 3);
+}
+
+#mealHistoryTitle {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* Table Styling */
+#mealTable {
+    -fx-background-color: #f4fbf8;
+    -fx-border-color: #cdd6d0;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0.3, 0, 2);
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI";
+}
+
+#recipeColumn, #caloriesColumn, #dateColumn {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f8f8f8;
+    -fx-text-fill: #3d5568;
+}

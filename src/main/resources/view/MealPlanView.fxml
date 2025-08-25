@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="mealPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MealPlanController">
+      <HBox id="navBar" prefHeight="85.0" prefWidth="1200.0" style="-fx-background-color: #aabfac;" AnchorPane.bottomAnchor="715.3333333333334" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <ImageView id="logo" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
+            <Image url="@/images/nutriTrack_logo.png" />
+         </ImageView>
+         <Button id="navButton" mnemonicParsing="false" onAction="#goToHome" prefHeight="63.0" prefWidth="110.0" text="Home 🏠">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+         <Button id="navButton" mnemonicParsing="false" onAction="#goToMealPlan" prefHeight="63.0" prefWidth="200.0" text="Meal Plan 🍴">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+         <Button id="navButton" mnemonicParsing="false" onAction="#goToRecipe" prefHeight="63.0" prefWidth="112.0" text="Recipe 🍲">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+         <Button id="navButton" mnemonicParsing="false" onAction="#goToHealthDashboard" prefHeight="63.0" prefWidth="200.0" text="Health Dashboard 📶">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin>
+         </Button>
+         <Button id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefHeight="63.0" prefWidth="122.0" text="Logout ⏻">
+            <HBox.margin>
+               <Insets left="90.0" />
+            </HBox.margin>
+         </Button>
+      </HBox>
+   <BorderPane layoutY="95.0" prefHeight="715.0" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <left>
+         <ScrollPane id="mealScrollPane" fitToWidth="true" prefHeight="633.0" prefWidth="570.0" BorderPane.alignment="CENTER">
+            <VBox id="mealVBox" fx:id="mealListContainer" prefHeight="690.0" prefWidth="554.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FEED ME SOME RECIPE" textAlignment="CENTER" wrappingWidth="520.390625" />
+            </VBox>
+         </ScrollPane>
+      </left>
+      <center>
+         <ScrollPane id="detailScrollPane" prefHeight="473.0" prefWidth="630.0" BorderPane.alignment="CENTER">
+            <VBox id="recipeVBox" prefHeight="900.0" prefWidth="611.0" spacing="10.0">
+               <Text id="detailsTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="RECIPE DETAILS" textAlignment="CENTER" />
+               <ImageView id="recipeImage" fx:id="imgRecipe" fitHeight="160.0" fitWidth="180.0" pickOnBounds="true">
+                  <VBox.margin>
+                     <Insets left="220.0" />
+                  </VBox.margin>
+               </ImageView>
+               <HBox prefHeight="29.0" prefWidth="542.0" spacing="10.0">
+                  <VBox.margin>
+                     <Insets right="10.0" />
+                  </VBox.margin>
+                  <Label id="recipeName" text="Recipe Name:" />
+                  <Label id="recipeLbl" fx:id="lblTitle" text="--" />
+               </HBox>
+               <HBox prefHeight="29.0" prefWidth="390.0" spacing="10.0">
+                  <VBox.margin>
+                     <Insets right="10.0" />
+                  </VBox.margin>
+                  <Label id="calories" text="Calories:" />
+                  <Label id="caloriesLbl" fx:id="lblCalories" text="--" />
+               </HBox>
+               <VBox prefHeight="73.0" prefWidth="390.0" spacing="10.0">
+                  <VBox.margin>
+                     <Insets right="10.0" />
+                  </VBox.margin>
+                  <Label id="nutrition" text="Nutrition:">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <Label id="nutritionLbl" fx:id="lblNutrition" text="--" wrapText="true" />
+               </VBox>
+               <VBox prefHeight="153.0" prefWidth="583.0" spacing="10.0">
+                  <Label id="ingredients" text="Ingredients:">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <ScrollPane fitToWidth="true" prefHeight="105.0" prefWidth="583.0" style="-fx-background-color: #ffffff;">
+                     <Label id="ingredientLbl" fx:id="lblIngredients" text="--" wrapText="true" />
+                  </ScrollPane>
+               </VBox>
+               <VBox prefHeight="253.0" prefWidth="583.0" spacing="10.0">
+                  <Label id="steps" text="Steps:">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <ScrollPane fitToWidth="true" prefHeight="203.0" prefWidth="583.0" style="-fx-background-color: #ffffff;">
+                     <Label id="stepsLbl" fx:id="lblSteps" text="--" wrapText="true" />
+                  </ScrollPane>
+               </VBox>
+               <Button id="consumedButton" fx:id="btnConsume" alignment="CENTER" mnemonicParsing="false" text=" ✔ Mark as Consumed" textAlignment="CENTER">
+                  <VBox.margin>
+                     <Insets left="220.0" />
+                  </VBox.margin>
+               </Button>
+            </VBox>
+         </ScrollPane>
+      </center>
+      <top>
+         <VBox id="topBox" prefHeight="143.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="97.0" prefWidth="1200.0">
+               <Label id="chooseDateText" text="Meal Plan for">
+                  <padding>
+                     <Insets left="10.0" right="10.0" />
+                  </padding>
+               </Label>
+               <DatePicker id="datePicker" fx:id="datePicker" promptText="Choose a date">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </DatePicker>
+            </HBox>
+            <Label id="dateText" fx:id="lblDate" text="Date 📆">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Label>
+         </VBox>
+      </top>
+   </BorderPane>
+   <stylesheets>
+      <URL value="@css/home.css" />
+      <URL value="@css/mealplan.css" />
+   </stylesheets>
+</AnchorPane>

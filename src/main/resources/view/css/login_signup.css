@@ -1,0 +1,71 @@
+/* Root AnchorPane */
+#rootPane {
+    -fx-background-color: linear-gradient(to bottom right, #e8f0ff, #fefefe);
+}
+
+/* Boxes */
+#loginBox, #signupBox {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-alignment: center;
+    -fx-spacing: 25;
+    -fx-padding: 50 80 50 80;
+}
+
+/* Titles */
+#welcomeText, #signupTitle {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 35px;
+    -fx-fill: #1f6b10;
+}
+
+/* Labels */
+#emailLabel, #passwordLabel, #nameLabel, #noAccountText {
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 15px;
+}
+
+/* TextFields & PasswordFields */
+#emailField, #passwordField, #nameField {
+    -fx-pref-height: 39px;
+    -fx-background-color: #dff0df;
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 12px;
+    -fx-cursor: text;
+    -fx-background-radius: 6px;
+}
+
+/* Buttons */
+#loginButton, #signupButton, #backButton {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+}
+
+#loginButton {
+    -fx-background-color: #7cc47c;
+}
+#loginButton:hover {
+    -fx-background-color: #5ea15e;
+}
+
+#signupButton {
+    -fx-background-color: #90b0e8;
+}
+
+#signupButton:hover {
+    -fx-background-color: #8ab0d1;
+}
+
+#backButton {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 30px;
+}
+#backButton:hover {
+    -fx-background-color: #dddddd;
+}

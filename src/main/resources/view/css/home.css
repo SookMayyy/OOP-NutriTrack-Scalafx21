@@ -1,0 +1,181 @@
+/* ---------------- ScrollPane & Root ---------------- */
+#scrollRootPane {
+    -fx-background-color: #FAF6E9;
+    -fx-vbar-policy: as-needed;
+    -fx-hbar-policy: never;
+}
+
+.scroll-pane > .viewport {
+    -fx-fit-to-width: true;
+}
+
+/* ---------------- AnchorPane ---------------- */
+#scrollRootPane > AnchorPane {
+    -fx-background-color: #FAF6E9;
+}
+
+#homePane {
+    -fx-background-color:  #FAF6E9;
+}
+
+/* ---------------- MenuBar ---------------- */
+#menuBar {
+    -fx-border-color: #aabfac;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 2);
+}
+
+/* ---------------- Navigation Bar ---------------- */
+#navBar {
+    -fx-background-color: #aabfac;
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+}
+
+#logo {
+    -fx-background-size: 20px;
+}
+
+/* Navigation Buttons */
+#navButton, #logoutButton,
+#navBar > Button {
+    -fx-background-color: #aabfac;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;
+}
+
+#logoutButton {
+    -fx-text-fill: red;
+}
+
+/* Hover effect for buttons */
+#navBar > Button:hover {
+    -fx-background-color: #9bcfac;
+    -fx-cursor: hand;
+}
+
+/* ---------------- Titles ---------------- */
+#titleText {
+    -fx-fill: #1a530c;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 28px;
+}
+
+#sectionText {
+    -fx-fill: #000000;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 21px;
+}
+
+#text {
+    -fx-fill: #1a530c;
+    -fx-font-family: "Segoe UI";
+    -fx-font-style: italic;
+    -fx-font-weight: 100;
+    -fx-font-size: 14px;
+    -fx-text-alignment: justify;
+}
+
+#homeSection {
+    -fx-alignment: center_left;
+}
+
+#startButton {
+    -fx-background-color: #f7ad4d;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: HAND;
+}
+
+#startButton:hover {
+    -fx-background-color: #e38b2c;
+}
+
+/* ---------------- Feature Panes ---------------- */
+#explorePlan, #exploreHBox {
+    -fx-background-radius: 10;
+    -fx-background-color: white;
+}
+
+#mealPlanPane, #recipePane, #dashboardPane {
+    -fx-background-color: #f4fbf8;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 6, 0.5, 0, 2);
+    -fx-padding: 10px;
+}
+
+/* Feature Pane Text */
+#mealPlanText, #recipeText, #dashboardText {
+    -fx-fill: #000000;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+/* Feature Pane Buttons */
+#mealPlanExploreBtn, #recipeExploreBtn, #dashboardExploreBtn {
+    -fx-background-color: #f4fbf8;
+    -fx-text-fill: #090909;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 5px;
+    -fx-cursor: HAND;
+}
+
+#mealPlanExploreBtn:hover, #recipeExploreBtn:hover, #dashboardExploreBtn:hover {
+    -fx-background-color: #a9e3c0;
+}
+
+/* ---------------- Info Grid ---------------- */
+#gridPane {
+    -fx-padding: 20px;
+    -fx-hgap: 30px;
+    -fx-vgap: 20px;
+}
+
+/* Info Image */
+#infoImage {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);
+    -fx-background-radius: 10px;
+}
+
+/* Info Texts */
+#infoTitle {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-fill: #1a530c;
+}
+
+#infoText {
+    -fx-font-family: "Segoe UI Italic";
+    -fx-font-size: 14px;
+    -fx-fill: #333333;
+    -fx-padding: 10px;
+}
+
+/* ---------------- Lines ---------------- */
+.line {
+    -fx-stroke: #aabfac;
+    -fx-stroke-width: 2;
+}
+
+/* ---------------- ScrollBar ---------------- */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+

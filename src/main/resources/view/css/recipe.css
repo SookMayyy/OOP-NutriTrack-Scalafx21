@@ -1,0 +1,113 @@
+/* ---------------- Root BorderPane ---------------- */
+#borderPane {
+    -fx-background-color: #FAF6E9;
+}
+
+/* ---------------- Left Category Box ---------------- */
+#categoryBox {
+    -fx-background-color: #fad9a7;
+    -fx-border-color: black;
+    -fx-alignment: top_center;
+    -fx-padding: 20px 10px;
+    -fx-spacing: 10px;
+}
+
+#categoryTitle {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+#mainDishBtn, #beverageBtn, #sideDishBtn, #dessertBtn, #soupsBtn {
+    -fx-background-color: #fad9a7;
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+/* ---------------- Center Content ---------------- */
+#recipeTitle {
+    -fx-font-family: "Segoe UI Bold";
+    -fx-font-size: 20px;
+}
+
+#caloriesRange {
+    -fx-font-family: "Segoe UI Bold";
+    -fx-font-size: 14px;
+}
+
+#minInput, #maxInput {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #ccc;
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 12px;
+}
+
+#symbol {
+    -fx-font-family: "Segoe UI Bold";
+    -fx-font-size: 20px;
+}
+
+#filterBtn {
+    -fx-background-color: #f7ad4d;
+    -fx-border-color: #f7ad4d;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI Bold";
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+#filterBtn:hover {
+    -fx-background-color: #e38b2c;
+}
+
+/* ScrollPane for recipes */
+#recipeScrollPane {
+    -fx-background-color: transparent;
+}
+
+/* Container inside ScrollPane */
+#recipeListContainer {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+/* ---------------- Right Nutrition Info ---------------- */
+#nutritionInfo {
+    -fx-background-color: white;
+    -fx-spacing: 30px;
+    -fx-padding: 10px;
+}
+
+#nutritionText {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+#prepTime, #cookTime, #nutrition, #ingredients, #steps {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+#prepLabel, #cookLabel, #nutritionList, #lblIngredients, #lblSteps {
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}
+
+/* ---------------- Add To Meal Plan Button ---------------- */
+#addPlanBtn {
+    -fx-background-color: #2fa34e;
+    -fx-border-color: #2fa34e;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI Bold";
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}

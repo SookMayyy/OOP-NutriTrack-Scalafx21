@@ -1,0 +1,120 @@
+/* ---------------- Root ---------------- */
+#mealPane {
+    -fx-background-color: #FAF6E9;
+    -fx-font-family: "Segoe Print";
+    -fx-background-image: url("../../images/beige_background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+/* ---------------- Menu Bar ---------------- */
+#menuBar {
+    -fx-border-color: #aabfac;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 2);
+    -fx-background-color: #ffffff;
+}
+
+/* ---------------- Navigation Bar ---------------- */
+#navBar {
+    -fx-background-color: #aabfac;
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+}
+
+#navButton, #logoutButton {
+    -fx-background-color: #aabfac;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+#logoutButton {
+    -fx-text-fill: red;
+}
+
+#navButton:hover {
+    -fx-background-color: #f7ad4d;
+}
+
+/* ---------------- Titles ---------------- */
+#detailsTitle, #chooseDateText, #dateText {
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-fill: #1a530c;
+}
+
+/* ---------------- Labels ---------------- */
+#recipeName, #calories, #nutrition, #ingredients, #steps {
+    -fx-font-size: 12px;
+    -fx-text-fill: #1a530c;
+    -fx-font-weight: bold;
+}
+
+#recipeLbl, #caloriesLbl, #nutritionLbl, #ingredientLbl, #stepsLbl {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+}
+
+/* ---------------- Scroll Panes ---------------- */
+#mealScrollPane, #detailScrollPane {
+    -fx-background-color: transparent;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: false;
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: as-needed;
+}
+
+#recipeVBox {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+}
+
+#mealVBox {
+    -fx-spacing: 12;
+}
+
+/* ---------------- Meal Cards ---------------- */
+#mealVBox > .hbox {
+    -fx-background-color: #e1f5e6;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-spacing: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+#mealVBox > .hbox:hover {
+    -fx-background-color: #cdeed2;
+    -fx-cursor: hand;
+}
+
+/* ---------------- Buttons ---------------- */
+#consumedButton {
+    -fx-background-color: #418f4b;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Segoe Print";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+#consumedButton:hover {
+    -fx-background-color: #e38b2c;
+}
+
+/* ---------------- Date Picker ---------------- */
+#datePicker {
+    -fx-background-color: #ffffff;
+    -fx-font-family: "Segoe Print";
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-border-color: #aabfac;
+    -fx-border-radius: 6;
+    -fx-padding: 4px;
+}

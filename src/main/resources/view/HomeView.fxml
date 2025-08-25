@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane id="scrollRootPane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@css/home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1200.0">
+
+        <!-- Background Image -->
+        <ImageView id="backgroundImage" fitHeight="750.0" fitWidth="1200.0" layoutX="-6.0" layoutY="-3.0" opacity="0.5" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <Image url="@/images/home_background.png" />
+        </ImageView>
+
+        <!-- Navigation Bar -->
+        <HBox id="navBar" layoutX="-5.0" prefHeight="84.0" prefWidth="1200.0" style="-fx-background-color: #aabfac;" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-5.6666666666667425" AnchorPane.topAnchor="0.0">
+            <ImageView id="logo" fitHeight="64.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@/images/nutriTrack_logo.png" />
+                <HBox.margin>
+                    <Insets left="30.0" />
+                </HBox.margin>
+            </ImageView>
+            <Button id="navButton" mnemonicParsing="false" onAction="#goToHome" prefHeight="63.0" prefWidth="110.0" text="Home 🏠">
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goToMealPlan" prefHeight="63.0" prefWidth="200.0" text="Meal Plan 🍴">
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goToRecipe" prefHeight="63.0" prefWidth="112.0" text="Recipe 🍲">
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goToHealthDashboard" prefHeight="63.0" prefWidth="200.0" text="Health Dashboard 📶">
+                <HBox.margin>
+                    <Insets left="20.0" />
+                </HBox.margin>
+            </Button>
+            <Button id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefHeight="63.0" prefWidth="122.0" text="Logout ⏻">
+                <HBox.margin>
+                    <Insets left="100.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+        <HBox alignment="CENTER" layoutY="114.0" prefHeight="287.0" prefWidth="1200.0" spacing="30.0">
+            <VBox id="homeSection" prefHeight="287.0" prefWidth="569.0" spacing="20.0">
+                <padding>
+                    <Insets left="100.0" />
+                </padding>
+
+                <!-- Title -->
+                <Text id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to NutriTrack!" textAlignment="CENTER" wrappingWidth="341.67120361328125" />
+                <Text id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="NutriTrack is your personal nutrition assistant that makes meal planning simple, smart, and healthy. It provides a bunch of nutritious food for you to cook at home while tracking your calories and nutrition level" textAlignment="CENTER" wrappingWidth="419.7750244140625" />
+                <Button id="startButton" mnemonicParsing="false" onAction="#getStarted" text="Get Started" />
+            </VBox>
+            <ImageView fitHeight="240.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../images/home_food.png" />
+            </ImageView>
+        </HBox>
+        <Text id="sectionText" layoutX="423.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Explore NutriTrack" textAlignment="CENTER" wrappingWidth="393.6939697265625" />
+
+        <!-- Explore Panes -->
+        <Pane id="explorePane" layoutX="197.0" layoutY="450.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="846.0" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="450.0">
+            <HBox id="exploreHBox" alignment="TOP_CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="303.0" prefWidth="847.0" spacing="40.0">
+                <Pane id="mealPlanPane" prefHeight="200.0" prefWidth="200.0">
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                    <Text id="mealPlanText" layoutX="16.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Meal Plan" />
+                    <Button id="mealPlanExploreBtn" layoutX="61.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleExploreMealPlan" text="Explore ➤" />
+                    <ImageView fitHeight="132.0" fitWidth="172.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+                        <Image url="@/images/home_mealPlan.jpg" />
+                    </ImageView>
+                </Pane>
+                <Pane id="recipePane" prefHeight="200.0" prefWidth="200.0">
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                    <Text id="recipeText" layoutX="52.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Recipes" textAlignment="CENTER" />
+                    <Button id="recipeExploreBtn" layoutX="61.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleExploreRecipe" text="Explore ➤" />
+                    <ImageView fitHeight="132.0" fitWidth="172.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+                        <Image url="@/images/home_recipes.jpg" />
+                    </ImageView>
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </Pane>
+                <Pane id="dashboardPane" prefHeight="200.0" prefWidth="200.0">
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                    <Text id="dashboardText" layoutX="39.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Dashboard" />
+                    <Button id="dashboardExploreBtn" layoutX="61.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleExploreHealthDashboard" text="Explore ➤" />
+                    <ImageView fitHeight="132.0" fitWidth="172.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+                        <Image url="@/images/home_healthDashboard.png" />
+                    </ImageView>
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </Pane>
+                <padding>
+                    <Insets bottom="30.0" top="30.0" />
+                </padding>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </HBox>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </Pane>
+
+        <Line endX="859.333251953125" layoutX="268.0" layoutY="780.0" startX="-167.0" stroke="#aabfac" AnchorPane.topAnchor="779.5" />
+
+        <!-- Section Info -->
+        <Text id="sectionText" layoutX="424.0" layoutY="847.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eating smart has never been easier" textAlignment="CENTER" />
+        <GridPane id="gridPane" hgap="30.0" layoutX="95.33333333333333" layoutY="859.0" prefHeight="309.0" prefWidth="1031.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="75.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.6666361490886" minWidth="10.0" prefWidth="493.66667683919263" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.3333435058594" minWidth="10.0" prefWidth="467.6666564941406" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="132.33331298828125" minHeight="10.0" prefHeight="109.6666259765625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="141.00004069010419" minHeight="10.0" prefHeight="139.00004069010419" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <HBox alignment="CENTER_LEFT" prefHeight="129.0" prefWidth="414.0">
+                <ImageView id="infoImage" fitHeight="87.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/home_eatingstyle.png" />
+                    <HBox.margin>
+                        <Insets right="30.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox prefHeight="161.0" prefWidth="337.0">
+                    <Text id="infoTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Discover Recipes Tailored to Your Needs" />
+                    <Text id="infoText" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the nutrients you want to focus on. Explore a variety of healthy recipes with different nutritional profiles." textAlignment="JUSTIFY" wrappingWidth="300.0" />
+                    <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="145.0" prefWidth="454.0" GridPane.columnIndex="1">
+                <ImageView id="infoImage" fitHeight="87.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/home_foodwaste.png" />
+                    <HBox.margin>
+                        <Insets right="30.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox prefHeight="143.0" prefWidth="314.0">
+                    <Text id="infoTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Reduce Food Waste" />
+                    <Text id="infoText" strokeType="OUTSIDE" strokeWidth="0.0" text="By tracking what you eat and planning ahead, NutriTrack ensures you make the most of your groceries and reduce unnecessary food waste." textAlignment="JUSTIFY" wrappingWidth="300.0" />
+                    <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                <ImageView id="infoImage" fitHeight="87.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/home_plan.png" />
+                    <HBox.margin>
+                        <Insets right="30.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox prefHeight="190.0" prefWidth="332.0">
+                    <Text id="infoTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Take the anxiety out of picking what to eat" wrappingWidth="300.0" />
+                    <Text id="infoText" strokeType="OUTSIDE" strokeWidth="0.0" text="Plan your meals for the week in advance so you’re never stuck wondering what to eat. Then relax and enjoy mealtime with zero stress." textAlignment="JUSTIFY" wrappingWidth="300.0" />
+                    <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ImageView id="infoImage" fitHeight="87.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@/images/home_eatingstyle.png" />
+                    <HBox.margin>
+                        <Insets right="30.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox prefHeight="209.0" prefWidth="297.0">
+                    <Text id="infoTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Detailed nutrition information " wrappingWidth="257.4810028076172" />
+                    <Text id="infoText" strokeType="OUTSIDE" strokeWidth="0.0" text="Track daily calorie intake and macro ratios - including protein, fat, and carbs foods — all visualized in easy-to-read charts." textAlignment="JUSTIFY" wrappingWidth="300.0" />
+                    <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </HBox>
+        </GridPane>
+    </AnchorPane>
+</ScrollPane>
